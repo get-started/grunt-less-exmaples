@@ -1,0 +1,24 @@
+{
+  "name": "grunt-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-mincss": "^0.3.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-cssjoin": "^0.3.0",
+    "grunt-init": "^0.3.2",
+    "grunt-newer": "^1.1.0"
+  }
+}
