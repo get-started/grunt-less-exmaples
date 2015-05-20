@@ -1,37 +1,5 @@
 module.exports = function (grunt) {
 
-    var fs = require('fs');
-    var path = require('path');
-
-    function includeIfImportedFileChanged(lessFile, mTime, include) {
-        function fileChanged(file) {
-            return fs.existsSync(file) && fs.statSync(file).mtime > mTime;
-        }
-
-        function whenFileChanged(file) {
-            var changed = false;
-            fs.readFile(file, "utf8", function (err, data) {
-                var lessDir = path.dirname(file),
-                    regex = /@import\s+"([^."']+)(?:^\.css)?";/g,
-                    result;
-                while (result = regex.exec(data)) {
-                    // All of my less files are in the same directory,
-                    // other paths may need to be traversed for different setups...
-                    var baseName = result[1];
-                    var importFile = lessDir + '/' + baseName + '.less';
-                    if (fileChanged(importFile)) {
-                        changed=true;
-                        break;
-                    }
-                }
-            });
-            return changed;
-        }
-
-        include(whenFileChanged(lessFile))
-    }
-
-
     grunt.initConfig({
         clean: {
             product: {
